@@ -1,7 +1,14 @@
 package com.ytech.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Vehicle {
 
+	/*
+	@Autowired
+	private Person person; //circular dependency
+	*/
+	
     private String name;
 
     public String getName() {
