@@ -7,7 +7,11 @@ import com.ytech.services.VehicleServices;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-
+/*
+ NOTE:
+ If class name is MyVehicleEngine then bean name will become myVehicleEngine in spring context.
+ Eager and lazy loading terms not applicable for Prototype scoped beans since they created every time when reference created.
+ */
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
         VehicleServices vehicleServices1 = context.getBean(VehicleServices.class);
