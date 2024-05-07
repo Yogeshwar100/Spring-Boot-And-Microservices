@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ytech</groupId>
-	<artifactId>A019-WebAppUsingThymeleafDevToolsDemo</artifactId>
+	<artifactId>A019-WebAppUsingThymeleafAndDevTools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>A019-WebAppUsingThymeleafDevToolsDemo</name>
+	<name>A019-WebAppUsingThymeleafAndDevTools</name>
 	<description>Eazy School Web Application</description>
 	<properties>
 		<java.version>17</java.version>
