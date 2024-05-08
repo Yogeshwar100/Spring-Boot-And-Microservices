@@ -1,0 +1,79 @@
+spring.security.user.name = ytech
+spring.security.user.password = 12345
+
+#default user name: User
+#password will be generated on console after startup of application.
+
+Spring security is powerful and highly customizable authentication and authorization framework. 
+
+dependency required: spring-boot-stater-security
+
+Once above dependency added automatically all paths of application will get secured. 
+
+Spring security provides out of the box features to handle common security attacks like CSRF (Cross-Site Request Forgery), 
+CORs (Cross-Origin Resource Sharing).
+
+It also has good integration with security standards like JWT (JSON Web Token), OAUTH2 (Open Authorization 2.0) etc. 
+
+CSRF:
+=====
+CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious web-site or email tricks a user's web browser
+into making unauthorized requests to a different web-site where the user is authenticated. This can lead to actions being performed 
+on behalf of the user without their consent.
+
+To prevent CSRF attacks, web applications often use techniques such as CSRF tokens, which are unique, random tokens generated for
+each session and included in forms or requests. The server verifies these tokens to ensure that the request originated from the 
+legitimate user and not from a malicious source. Additionally, setting secure and HTTP-only flags for cookies can help mitigate
+CSRF attacks.
+
+Authentication Vs Authorization:
+================================
+
+			Authentication															Authorization
+----------------------------------------------------------------------------------------------------------------------------
+
+Identity of users are checked for providing					Users authorities are checked for accessing the resources.
+the access to the system.
+
+
+Authentication done before authorization.					Authorization always happen after Authentication.
+
+
+It needs users login details.								It needs users privilege or roles.
+
+
+If authentication fails we will get 401 error response.		If authentication fails we will get 403 error response. 	
+
+
+
+By default, Spring Security protects all the paths inside the web application. This behaviour is due to the following present inside the method
+defaultSecurityFilterChain(HttpSecurity http) of class SpringBootWebSecurityConfiguration.
+
+
+		@Bean
+		@Order(SecurityProperties.BASIC_AUTH_ORDER)
+		SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+			http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
+			http.formLogin(withDefaults());		//request by form action will be secured using above lambda expression.
+			http.httpBasic(withDefaults());		//rest api or http protocol requests will be secured using above lambda expression.
+			return http.build();				//build() will return the object of SecurityFilterChain.
+		}
+
+withDefaults(): This method configures the form login with default settings provided by Spring Security. These default settings typically include:
+The login page URL (usually "/login").
+The login processing URL (usually "/login").
+The parameter names for the username and password fields (usually "username" and "password").
+The default success and failure URL for redirection after login.
+In summary, http.formLogin(withDefaults()) sets up form-based authentication with default settings, including the login page URL, processing URL, 
+and parameter names for the username and password fields. It's a convenient way to quickly enable form-based authentication in a Spring Security
+configuration.
+
+
+
+
+
+
+
+
+
+
