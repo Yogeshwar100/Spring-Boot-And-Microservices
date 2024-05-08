@@ -1,7 +1,8 @@
-package com.eazybytes.eazyschool.controller;
+package com.ytech.eazyschool.controller;
 
-import com.eazybytes.eazyschool.model.Contact;
-import com.eazybytes.eazyschool.service.ContactService;
+import com.ytech.eazyschool.service.ContactService;
+import com.ytech.eazyschool.model.Contact;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

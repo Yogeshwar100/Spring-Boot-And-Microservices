@@ -1,8 +1,9 @@
-package com.eazybytes.eazyschool.service;
+package com.ytech.eazyschool.service;
 
-import com.eazybytes.eazyschool.model.Contact;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import com.ytech.eazyschool.model.Contact;
 
 /*
 @Slf4j, is a Lombok-provided annotation that will automatically generate an SLF4J
