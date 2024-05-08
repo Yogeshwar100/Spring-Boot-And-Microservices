@@ -10,6 +10,8 @@ dependency required: spring-boot-stater-security
 
 Once above dependency added automatically all paths of application will get secured. 
 
+If you haven't explicitly configured a custom login page path, Spring Security will automatically create a login page at /login.
+
 Spring security provides out of the box features to handle common security attacks like CSRF (Cross-Site Request Forgery), 
 CORs (Cross-Origin Resource Sharing).
 
