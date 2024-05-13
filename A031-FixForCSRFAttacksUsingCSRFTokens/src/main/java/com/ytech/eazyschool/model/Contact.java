@@ -1,4 +1,4 @@
-package com.eazybytes.eazyschool.model;
+package com.ytech.eazyschool.model;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
