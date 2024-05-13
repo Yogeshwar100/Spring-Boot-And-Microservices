@@ -1,4 +1,4 @@
-package com.eazybytes.eazyschool.config;
+package com.ytech.eazyschool.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
