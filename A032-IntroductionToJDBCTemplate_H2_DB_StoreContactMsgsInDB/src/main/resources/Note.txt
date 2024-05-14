@@ -1,0 +1,64 @@
+Steps to follow while using JDBC Template:
+
+Step 1) Create Data Source bean inside web application with DB credentials like below:
+
+	@Bean
+	public DataSource myDataSource(){
+		DriverManagerDataSource dataSource=new DriverManagerDataSource();
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/ytech");
+		dataSource.setUsername("user");
+		dataSource.setPassword("password");
+		return dataSource;
+	}
+	
+	
+Step 2) Inside any Repository/DAO classes where we want to execute queries, we need to create a bean/object of JdbcTemplate
+ by injecting data source bean.  
+ 
+ 	@Repository
+ 	public class PersonDAOImpl implements PersonDAO{
+ 		JdbcTemplate jdbcTemplate;
+ 	
+ 		@Autowired
+ 		public PersonDAOImpl(DataSource dataSource){
+ 			jdbcTemplate=new JdbcTemplate(dataSource);
+ 		}
+ 	}
+ 	
+ =============================================================================================================================
+ 
+ Sample usage of JdbcTemplate for SELECT Queries:
+ int rowCount=this.jdbcTemplate.queryForObject("select count(*) from person",Integer.class);
+ 
+ int countPersonsNamedJoe=this.jdbcTemplate.queryForObject("select count(*) from person where first_name=?",Integer.class,"Joe"); 
+ 
+ String lastName=this.jdbcTemplate.queryForObject("select last_name from person where id=?",String.class,1025112L);
+ -------------------------------------------------
+ 
+ Sample usage of JdbcTemplate for UPDATE(DML) Queries:
+ this.jdbcTemplate.update("insert into person (first_name,last_name) values (?,?)","John","Doe");
+ 
+ this.jdbcTemplate.update("update person set last_name=? where id=?","Maria",5240L);
+ 
+ this.jdbcTemplate.update("delete from person where id=?",5411L);
+ 
+ -------------------------------------------------
+ Other JdbcTemplate Operations:
+ this.jdbcTemplate.execute("create table person (id integer, name varchar(100))");
+ 
+ this.jdbcTemplate.update("call SUPPORT.REFRESH_PERSON_SUMMARY(?)",5240L);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
