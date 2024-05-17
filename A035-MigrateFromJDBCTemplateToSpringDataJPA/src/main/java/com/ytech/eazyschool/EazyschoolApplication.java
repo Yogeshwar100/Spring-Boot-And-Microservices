@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories("com.eazybytes.eazyschool.repository")
-@EntityScan("com.eazybytes.eazyschool.model")
+@EnableJpaRepositories("com.ytech.eazyschool.repository")
+@EntityScan("com.ytech.eazyschool.model")
 public class EazyschoolApplication {
 
 	public static void main(String[] args) {
