@@ -1,4 +1,4 @@
-package com.eazybytes.eazyschool.model;
+package com.ytech.eazyschool.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

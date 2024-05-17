@@ -1,4 +1,4 @@
-package com.eazybytes.eazyschool.constants;
+package com.ytech.eazyschool.constants;
 
 public interface EazySchoolConstants {
 

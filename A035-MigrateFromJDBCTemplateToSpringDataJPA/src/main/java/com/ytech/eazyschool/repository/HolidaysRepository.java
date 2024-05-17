@@ -1,8 +1,9 @@
-package com.eazybytes.eazyschool.repository;
+package com.ytech.eazyschool.repository;
 
-import com.eazybytes.eazyschool.model.Holiday;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.ytech.eazyschool.model.Holiday;
 
 /*
 @Repository stereotype annotation is used to add a bean of this class

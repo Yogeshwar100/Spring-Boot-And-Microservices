@@ -1,8 +1,9 @@
-package com.eazybytes.eazyschool.repository;
+package com.ytech.eazyschool.repository;
 
-import com.eazybytes.eazyschool.model.Contact;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.ytech.eazyschool.model.Contact;
 
 import java.util.List;
 

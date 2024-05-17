@@ -1,8 +1,9 @@
-package com.eazybytes.eazyschool.service;
+package com.ytech.eazyschool.service;
 
-import com.eazybytes.eazyschool.constants.EazySchoolConstants;
-import com.eazybytes.eazyschool.model.Contact;
-import com.eazybytes.eazyschool.repository.ContactRepository;
+import com.ytech.eazyschool.constants.EazySchoolConstants;
+import com.ytech.eazyschool.model.Contact;
+import com.ytech.eazyschool.repository.ContactRepository;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
